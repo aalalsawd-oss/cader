@@ -1,0 +1,106 @@
+@import "https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Inter:wght@400;500;600;700&display=swap";
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #8B0000;
+  --secondary: #D4AF37;
+  --dark-bg: #1a1a1a;
+  --darker-bg: #0d0d0d;
+  --light-text: #ffffff;
+  --gray-text: #cccccc;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  font-family: 'Cairo', 'Inter', sans-serif;
+  background: var(--darker-bg);
+  color: var(--light-text);
+  line-height: 1.7;
+  direction: rtl;
+}
+
+/* ===================== */
+/* 🔥 FIX الموبايل الحقيقي */
+/* ===================== */
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 🔹 Grid System نظيف */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* 🔹 Flex helper */
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+/* ===================== */
+/* 📱 MOBILE */
+/* ===================== */
+@media (max-width: 768px) {
+
+  html, body {
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 {
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
+  }
+
+  p, span, a {
+    font-size: clamp(0.85rem, 3vw, 1rem);
+  }
+
+  section {
+    padding: 2rem 5%;
+  }
+
+  /* 🔥 أهم إصلاح */
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .flex {
+    flex-direction: column;
+  }
+
+  header img {
+    max-height: 50px;
+  }
+
+}
+
+/* ===================== */
+/* 💻 Tablet */
+/* ===================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
